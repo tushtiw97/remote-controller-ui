@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { VolumeActions } from './models/volume-actions.enum';
+import { SeekActions } from './models/seek-actions.enum';
+import { MouseMoveActions } from './models/mouse-move-actions.enum';
+import { MediaStatus } from './models/media-status.enum';
 
 @Component({
   selector: 'app-root',
@@ -15,18 +19,40 @@ export class AppComponent {
     this.currentMediaStatus = this.currentMediaStatus === MediaStatus.PAUSED ? MediaStatus.PLAYING : MediaStatus.PAUSED;
   }
 
-  lel(event: MouseEvent) {
-    event.preventDefault();
-    console.log('mouse down');
+  volumeAction(action: string) {
+    if (action === VolumeActions.UP) {
+      console.log('Volume action up');
+    } else if (action === VolumeActions.DOWN) {
+      console.log('Volume action down');
+    }
   }
 
-  lol(event: MouseEvent) {
-    event.preventDefault();
-    console.log('mouse up');
+  seekAction(action: string) {
+    if (action === SeekActions.FORWARD) {
+      console.log('Seek action forward');
+    } else if (action === SeekActions.REWIND) {
+      console.log('Seek action rewind');
+    }
   }
-}
 
-export enum MediaStatus {
-  PLAYING = 'PLAYING',
-  PAUSED = 'PAUSED'
+  mouseMoveAction(action: string) {
+    switch (action) {
+      case MouseMoveActions.UP:
+        console.log('Mouse move action up');
+        break;
+      case MouseMoveActions.DOWN:
+        console.log('Mouse move action down');
+        break;
+      case MouseMoveActions.LEFT:
+        console.log('Mouse move action left');
+        break;
+      case MouseMoveActions.RIGHT:
+        console.log('Mouse move action right');
+        break;
+    }
+  }
+
+  mouseSelectAction() {
+    console.log('Mouse select action');
+  }
 }

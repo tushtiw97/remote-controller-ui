@@ -10,9 +10,9 @@
           <i class="fa fa-volume-up" (click)='volumeAction("UP")'></i>
         </div>
         <div class="mid-row">
-          <i class="fa fa-backward"></i>
+          <i class="fa fa-backward" (click)='seekAction("REWIND")'></i>
           <i class="fa fa-{{currentMediaStatus === 'PAUSED' ? 'play' : 'pause'}}" (click)='toggleMediaStatus()'></i>
-          <i class="fa fa-forward" (mousedown)='lel($event)' (mouseup)='lol($event)'></i>
+          <i class="fa fa-forward" (click)='seekAction("FORWARD")'></i>
         </div>
         <div class="bottom-row">
           <i class="fa fa-volume-down" (click)='volumeAction("DOWN")'></i>
@@ -25,7 +25,23 @@
     <app-tab [header]='tabs[1]' [index]=1></app-tab>
   </div>
   <app-tab-content [index]=1 id="tab-content-1">
-
+    <div class="responsive-col-span-sides"></div>
+    <div class="responsive-col-span-player-controls text-light">
+      <div class="player-controls">
+        <div class="top-row">
+          <i class="fa fa-caret-up" (click)='mouseMoveAction("UP")'></i>
+        </div>
+        <div class="mid-row">
+          <i class="fa fa-caret-left" (click)='mouseMoveAction("LEFT")'></i>
+          <i class="fa fa-circle" (click)='mouseSelectAction()'></i>
+          <i class="fa fa-caret-right" (click)='mouseMoveAction("RIGHT")'></i>
+        </div>
+        <div class="bottom-row">
+          <i class="fa fa-caret-down" (click)='mouseMoveAction("DOWN")'></i>
+        </div>
+      </div>
+    </div>
+    <div class="responsive-col-span-sides"></div>
   </app-tab-content>
 
   <router-outlet></router-outlet>
