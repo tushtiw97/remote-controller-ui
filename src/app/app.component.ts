@@ -6,5 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'remote-controller-ui';
+
+  currentMediaStatus: string = MediaStatus.PAUSED;
+
+  tabs: Array<string> = ['Keyboard Controls', 'Mouse Controls'];
+
+  toggleMediaStatus() {
+    this.currentMediaStatus = this.currentMediaStatus === MediaStatus.PAUSED ? MediaStatus.PLAYING : MediaStatus.PAUSED;
+  }
+
+  lel(event: MouseEvent) {
+    event.preventDefault();
+    console.log('mouse down');
+  }
+
+  lol(event: MouseEvent) {
+    event.preventDefault();
+    console.log('mouse up');
+  }
+}
+
+export enum MediaStatus {
+  PLAYING = 'PLAYING',
+  PAUSED = 'PAUSED'
 }

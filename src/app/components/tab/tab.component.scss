@@ -1,0 +1,33 @@
+.tab-active {
+    background-color: green;
+}
+
+.tab-inactive {
+    background-color: gray;
+}
+
+div {
+    text-align: center;
+}
+
+.tab {
+    height: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding-right: 2vw;
+    padding-left: 1vw;
+}
+
+.rotate-up {
+    transform: rotateZ(0deg);
+}
+
+.rotate-down {
+    transform: rotateZ(90deg);
+}
+
+.rotate {
+    transition: transform 0.5s;
+}

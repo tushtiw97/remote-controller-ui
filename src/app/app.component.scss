@@ -1,0 +1,53 @@
+.body-div {
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    width: 100vw;
+    height: 100vh;
+}
+
+.padding-1-vh {
+    padding-top: 1vh;
+}
+
+.player-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mid-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+@media screen and (orientation: portrait) {
+    .tab-header {
+        width: 98vw;
+        height: 6vh;
+        font-size: 2vh;
+    }
+
+    .responsive-col-span-sides {
+        width: 10vh;
+    }
+
+    .responsive-col-span-player-controls {
+        width: 80vh;
+    }
+    
+}
+
+@media screen and (orientation: landscape) {
+    .tab-header {
+        width: 50vw;
+        height: 10vh;
+    }
+
+    .tab-content {
+        width: 100vw;
+        height: 90vh;
+    }
+}

@@ -1,0 +1,41 @@
+.content-absolute-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.padding-1-vh {
+    padding-top: 1vh;
+}
+
+@media screen and (orientation: portrait) {
+    .tab-content {
+        width: 98vw;
+        font-size: 6vh;
+        transition: height 0.5s;
+        overflow: hidden;
+    }
+
+    .tab-content-hide {
+        height: 0vh;
+    }
+    
+    .tab-content-show {
+        height: 87vh;
+    }
+
+    .action-toolbar-top {
+        width: 98vw;
+        height: 10vh;
+    }
+
+    .action-toolbar-bottom {
+        width: 98vw;
+        height: 10vh;
+    }
+
+    .action-toolbar-mid {
+        width: 98vw;
+        height: 67vh;
+    }
+}
